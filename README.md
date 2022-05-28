@@ -23,5 +23,5 @@
 
 ### Agredecimientos
 
-A la comunidad de r/unixporn.
-Al grupo de Arch Linux (Telegram).
+* A la comunidad de r/unixporn.
+* Al grupo de Arch Linux (Telegram).
