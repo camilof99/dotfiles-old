@@ -1,6 +1,6 @@
 
 ## Mi actual desktop
-<img src="https://i.ibb.co/mNwKVbp/2022-05-26-14-40.png" alt="2022-05-26-14-40" border="0">
+![Image text](https://github.com/camilof99/dotfiles/blob/master/2022-05-26-14-40.png)
 
 ## My first rice :3
 
