@@ -26,7 +26,6 @@ local net_widgets = require("net_widgets")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
-
 ---client.connect_signal("manage", function (c)
 ---    if not c.maximized then
 ---        if not c.fullscreen then
@@ -210,7 +209,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                              gears.shape.rounded_rect(cr,w,h,5)
                             end,
         },
-        
+
         buttons = {
             awful.button({ }, 1, function (c)
                 c:activate { context = "tasklist", action = "toggle_minimization" }
@@ -220,13 +219,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
             awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
         },
     }
-    
 
     mytaglistcontainer = wibox.container.margin (s.mytaglist, 4, 4, 3, 3)
     mylaunchercontainer = wibox.container.margin (mylauncher, 7, 2, 2, 2)
     mytasklistcontainer = wibox.container.margin (s.mytasklist, 4, 4, 4, 4)
     mylayoutboxcontainer = wibox.container.margin (s.mylayoutbox, 4, 4, 5, 4)
-    
+
     net_wired = net_widgets.indicator({
         interfaces  = {"eno1", "another_interface", "and_another_one"},
         timeout     = 5
@@ -336,6 +334,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     --#246326 #159947
 
     -- Create the wibox
+
     --s.mywibox = awful.wibar {
     --    position = "bottom",
     --    screen   = s,
@@ -368,13 +367,42 @@ screen.connect_signal("request::desktop_decoration", function(s)
         position = "top",
         screen   = screen[s],
         stretch  = false,
-        width    = 260,
+        width    = 40,
         bg = "#061A23",
         border_color = "#1F5F5B",
         border_width = 1.5,
         height = 30,
         margins = {
             top = 16,
+            left = 20,
+            right = 20
+        },
+        align    = "left",
+        widget   = {
+            layout = wibox.layout.align.horizontal,
+            { -- Left widgets
+                layout = wibox.layout.fixed.horizontal,
+                mylaunchercontainer
+            },
+            --s.mytasklist, -- Middle widget
+            --mytaglistcontainer,
+            { -- Right widgets
+                layout = wibox.layout.fixed.horizontal
+            }
+        },
+    }
+
+    s.mywibox1 = awful.wibar {
+        position = "top",
+        screen   = screen[s],
+        stretch  = false,
+        width    = 260,
+        bg = "#061A23",
+        border_color = "#1F5F5B",
+        border_width = 1.5,
+        height = 30,
+        margins = {
+            top = -14,
             left = 70,
             right = 20
         },
@@ -389,11 +417,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal
             },
-
         },
     }
 
-    s.mywibox1 = awful.wibar {
+    s.mywibox2 = awful.wibar {
         position = "top",
         screen   = screen[s],
         stretch  = false,
@@ -403,7 +430,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 150,
         height = 30,
         margins = {
-            top = -14,
+            top = -44,
             left = -530,
         },
         align    = "center",
@@ -413,7 +440,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
     }
 
-    s.mywibox2 = awful.wibar {
+    s.mywibox3 = awful.wibar {
         position = "top",
         screen   = screen[s],
         stretch  = false,
@@ -423,7 +450,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         border_width = 1.5,
         height = 30,
         margins = {
-            top = -45,
+            top = -74,
             right = 20
         },
         align    = "right",
@@ -443,36 +470,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         }
     }
 
-    s.mywibox3 = awful.wibar {
-        position = "top",
-        screen   = screen[s],
-        stretch  = false,
-        width    = 40,
-        bg = "#061A23",
-        border_color = "#1F5F5B",
-        border_width = 1.5,
-        height = 30,
-        margins = {
-            top = -74,
-            left = 20,
-            right = 20
-        },
-        align    = "left",
-        widget   = {
-            layout = wibox.layout.align.horizontal,
-            { -- Left widgets
-                layout = wibox.layout.fixed.horizontal,
-                mylaunchercontainer
-            },
-            --s.mytasklist, -- Middle widget
-            --mytaglistcontainer,
-            { -- Right widgets
-                layout = wibox.layout.fixed.horizontal
-            }
-
-        },
-    }
-
     s.mywibox4 = awful.wibar {
         position = "top",
         screen   = screen[s],
@@ -483,7 +480,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         border_width = 2,
         height = 30,
         margins = {
-            top = -105,
+            top = -104,
             right = 146
         },
         align    = "right",
@@ -515,7 +512,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         border_width = 2,
         height = 30,
         margins = {
-            top = -135,
+            top = -134,
             right = 380
         },
         align    = "right",
@@ -536,7 +533,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             }
         }
     }
-    
 
 end)
 -- }}}

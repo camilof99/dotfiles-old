@@ -8,7 +8,11 @@ super + Return
 
 # Browser
 super + f
-	firefox
+	microsoft-edge-stable
+
+# code
+super + v
+	code
 
 # program launcher
 super + d

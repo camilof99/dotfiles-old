@@ -4,6 +4,8 @@
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
+local xcolors = require("colors")
+local colors = xcolors.get_current_theme()
 local rnotification = require("ruled.notification")
 local dpi = xresources.apply_dpi
 
