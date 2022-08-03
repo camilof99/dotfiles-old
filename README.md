@@ -1,12 +1,12 @@
 
 ## Mi actual desktop
 <div>
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-05-26_14-40.png" width="500">
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-37.png" width="500">
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-38.png" width="500">
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-39.png" width="500">
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-40.png" width="500">
-  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-41.png" width="500">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-05-26_14-40.png" width="350">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-37.png" width="350">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-38.png" width="350">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-39.png" width="350">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-40.png" width="350">
+  <img src="https://github.com/camilof99/dotfiles/blob/master/2022-08-02_23-41.png" width="350">
 </div>
 
 ## My first rice :3
