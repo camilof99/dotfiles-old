@@ -22,6 +22,10 @@ local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 local net_widgets = require("net_widgets")
+
+local xcolors = require("colors")
+local colors = xcolors.get_current_theme()
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -223,7 +227,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     mytaglistcontainer = wibox.container.margin (s.mytaglist, 4, 4, 3, 3)
     mylaunchercontainer = wibox.container.margin (mylauncher, 7, 2, 2, 2)
     mytasklistcontainer = wibox.container.margin (s.mytasklist, 4, 4, 4, 4)
-    mylayoutboxcontainer = wibox.container.margin (s.mylayoutbox, 4, 4, 5, 4)
+    mylayoutboxcontainer = wibox.container.margin (s.mylayoutbox, 4, 4, 4, 4)
 
     net_wired = net_widgets.indicator({
         interfaces  = {"eno1", "another_interface", "and_another_one"},
@@ -237,7 +241,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
+        bg = colors.color4,
+        fg = colors.color0,
         --fg = "#49B265",
         border_width = (2),
         border_color = '#1b1d2488',
@@ -251,7 +256,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
+        bg = colors.color4,
         border_width = (2),
         border_color = '#1b1d2488'
     }
@@ -259,7 +264,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     myvolumecontainer = wibox.container.margin (
         volume_widget{
         widget_type = 'arc',
-        main_color = "#159947",
+        main_color = colors.color7,
     }, 6, 6, 4, 4)
 
     local container2 =
@@ -270,7 +275,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
+        bg = colors.color4,
         border_width = (2),
         border_color = '#1b1d2488'
     }
@@ -282,7 +287,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
+        bg = colors.color4,
         border_width = (2),
         border_color = '#1b1d2488',
     }
@@ -294,7 +299,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
+        bg = colors.color4,
         border_width = (2),
         border_color = '#1b1d2488',
     }
@@ -314,8 +319,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = "#06373A",
-        fg = "#49B265",
+        bg = colors.color4,
+        fg = colors.color0,
         border_width = (2),
         border_color = '#1b1d2488',
         forced_width = 60
@@ -369,13 +374,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         width    = 40,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 1.5,
         height = 30,
         margins = {
-            top = 16,
-            left = 20,
-            right = 20
+            top = 12,
+            left = 14,
         },
         align    = "left",
         widget   = {
@@ -398,13 +402,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         width    = 260,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 1.5,
         height = 30,
         margins = {
-            top = -14,
-            left = 70,
-            right = 20
+            top = -18,
+            left = 66,
         },
         align    = "left",
         widget   = {
@@ -425,13 +428,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen   = screen[s],
         stretch  = false,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 1.5,
         width    = 150,
         height = 30,
         margins = {
-            top = -44,
-            left = -530,
+            top = -48,
+            left = -536,
         },
         align    = "center",
         widget   = {
@@ -446,12 +449,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         width    = 116,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 1.5,
         height = 30,
         margins = {
-            top = -74,
-            right = 20
+            top = -78,
+            right = 14
         },
         align    = "right",
         widget   = {
@@ -476,12 +479,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         width    = 223,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 2,
         height = 30,
         margins = {
-            top = -104,
-            right = 146
+            top = -108,
+            right = 142
         },
         align    = "right",
         widget   = {
@@ -508,12 +511,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         width    = 100,
         bg = "#061A23",
-        border_color = "#1F5F5B",
+        border_color = colors.color3,
         border_width = 2,
         height = 30,
         margins = {
-            top = -134,
-            right = 380
+            top = -138,
+            right = 378
         },
         align    = "right",
         widget   = {

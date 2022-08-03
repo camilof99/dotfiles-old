@@ -27,26 +27,25 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap         = dpi(10)
+theme.useless_gap         = dpi(6)
 theme.border_width        = dpi(2)
 theme.border_radius = dpi(10)
 theme.client_radius = theme.border_radius
 theme.dashboard_radius = theme.border_radius
 theme.widget_radius = theme.border_radius
 
-theme.border_color_normal = "#164b5d"
-theme.border_color_active = "#159947"
+theme.border_color_normal = colors.color1
+theme.border_color_active = colors.color2
 theme.border_color_marked = "#91231c"
---#3992af #164b5d #349937 #246326
-theme.taglist_fg_focus    = "#49B265"
-theme.taglist_fg_occupied = "#159947"
+theme.taglist_fg_focus    = colors.color0
+theme.taglist_fg_occupied = colors.color5
 theme.taglist_fg_urgent   = "#ED7572"
-theme.taglist_fg_empty    = "#828282"
+theme.taglist_fg_empty    = colors.color1
 theme.taglist_spacing     = 3
 theme.taglist_font = "awesomewm-font 25"
 theme.tasklist_font = "HackNerdFont 8"
-theme.taglist_bg_focus    = "#06373A"
-theme.tasklist_bg_focus    = "#06373A"
+theme.taglist_bg_focus    = colors.color4
+theme.tasklist_bg_focus    = colors.color4
 
 theme.bg_systray = "#061A23"
 theme.systray_icon_spacing = 5
