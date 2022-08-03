@@ -42,8 +42,8 @@ theme.taglist_fg_occupied = colors.color5
 theme.taglist_fg_urgent   = "#ED7572"
 theme.taglist_fg_empty    = colors.color1
 theme.taglist_spacing     = 3
-theme.taglist_font = "awesomewm-font 25"
-theme.tasklist_font = "HackNerdFont 8"
+theme.taglist_font = "HackNerdFont 10 22"
+theme.tasklist_font = "HackNerdFont 8 8"
 theme.taglist_bg_focus    = colors.color4
 theme.tasklist_bg_focus    = colors.color4
 

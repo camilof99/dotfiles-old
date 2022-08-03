@@ -87,20 +87,20 @@ modkey = "Mod4"
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
-myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
-}
+--myawesomemenu = {
+--   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+--   { "manual", terminal .. " -e man awesome" },
+--   { "edit config", editor_cmd .. " " .. awesome.conffile },
+--   { "restart", awesome.restart },
+--   { "quit", function() awesome.quit() end },
+--}
+--
+--mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+--                                    { "open terminal", terminal }
+--                                  }
+--                        })
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir() .. "icon-hulk2.png",  menu = "rofi -show drun -show-icons" })
+mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir() .. "icon-hulk2.png",  command = "rofi -show drun -show-icons" })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -275,9 +275,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, 4)
         end,
-        bg = colors.color4,
-        border_width = (2),
-        border_color = '#1b1d2488'
+        --bg = colors.color4,
+        --border_width = (2),
+        --border_color = '#1b1d2488'
     }
 
     local container3 =
@@ -400,7 +400,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         position = "top",
         screen   = screen[s],
         stretch  = false,
-        width    = 260,
+        width    = 244,
         bg = "#061A23",
         border_color = colors.color3,
         border_width = 1.5,
@@ -434,7 +434,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -48,
-            left = -536,
+            left = -568,
         },
         align    = "center",
         widget   = {
@@ -477,7 +477,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         position = "top",
         screen   = screen[s],
         stretch  = false,
-        width    = 223,
+        width    = 192,
         bg = "#061A23",
         border_color = colors.color3,
         border_width = 2,
@@ -491,7 +491,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.align.horizontal,
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
-                netcontainer
+                --netcontainer
             },
             --s.mytasklist, -- Middle widget
             --clock,
@@ -516,7 +516,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -138,
-            right = 378
+            right = 346
         },
         align    = "right",
         widget   = {
@@ -541,11 +541,11 @@ end)
 -- }}}
 
 -- {{{ Mouse bindings
-awful.mouse.append_global_mousebindings({
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewprev),
-    awful.button({ }, 5, awful.tag.viewnext),
-})
+--awful.mouse.append_global_mousebindings({
+--    awful.button({ }, 3, function () mymainmenu:toggle() end),
+--    awful.button({ }, 4, awful.tag.viewprev),
+--    awful.button({ }, 5, awful.tag.viewnext),
+--})
 -- }}}
 
 -- {{{ Key bindings

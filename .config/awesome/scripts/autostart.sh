@@ -63,10 +63,6 @@ run mpd ~/.config/mpd/mpd.conf &
 run unclutter &
 # Start Volume Control applet
 run volctl &
-# Start Network Manager Applet 
-run nm-applet &
-# Set Numlock key to active.
-run numlockx &
 # Start Guake terminal  
 run guake &
 # Screensaver
@@ -81,5 +77,3 @@ run dropbox &
 run blueman-tray &
 # MPD
 run mpd ~/.config/mpd/mpd.conf &
-# Unclutter - (hides mouse pointer after 5 seconds of inactivity)
-run unclutter &
