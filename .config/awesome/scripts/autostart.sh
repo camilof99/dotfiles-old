@@ -32,7 +32,7 @@ run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # xrandr layout for AwesomeWM
 run ~/.scripts/awesome/awesome_display_layout.sh &
 # sxhkd Hotkeys
-run sxhkd &
+#run sxhkd &
 # Start compositor
 picom &
 # pywal
@@ -41,11 +41,11 @@ wal -R &
 run nitrogen --restore &
 # Start Volume Control applet
 run volctl &
-# Start Network Manager Applet 
+# Start Network Manager Applet
 run nm-applet &
 # Set Numlock key to active.
 run numlockx &
-# Start Guake terminal  
+# Start Guake terminal
 run guake &
 # Screensaver
 run xscreensaver -no-splash &
@@ -63,7 +63,7 @@ run mpd ~/.config/mpd/mpd.conf &
 run unclutter &
 # Start Volume Control applet
 run volctl &
-# Start Guake terminal  
+# Start Guake terminal
 run guake &
 # Screensaver
 run xscreensaver -no-splash &

@@ -26,6 +26,8 @@ local net_widgets = require("net_widgets")
 local xcolors = require("colors")
 local colors = xcolors.get_current_theme()
 
+local apps = require("apps")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -71,11 +73,6 @@ end)
 -- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "mytheme.lua")
-
--- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -579,12 +576,26 @@ awful.keyboard.append_global_keybindings({
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+
+            awful.key({ modkey }, "Return", function ()
+                awful.spawn(apps.default.terminal)
+            end, {description = "open a terminal", group = "launcher"}),
+
+            awful.key({ modkey }, "f", function()
+                awful.spawn(apps.default.web_browser)
+            end, { description = "open web browser", group = "launcher" }),
+
+            awful.key({ modkey }, "v", function()
+                awful.spawn(apps.default.code_editor)
+            end, { description = "open code", group = "launcher" }),
+
+            awful.key({ modkey }, "d", function()
+                awful.spawn(apps.default.app_launcher)
+            end, { description = "open code", group = "launcher" }),
 })
 
 -- Tags related keybindings
