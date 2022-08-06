@@ -32,34 +32,6 @@ local apps = require("apps")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
----client.connect_signal("manage", function (c)
----    if not c.maximized then
----        if not c.fullscreen then
----            c.shape = function(cr,w,h)
----                gears.shape.octogon(cr,w,h,14)
----                --rounded_rect
----                --octogon
----            end
----        end
----    end
----end)
-
-
---client.connect_signal("manage", function (c)
---    if not c.maximized then
---        c.shape = function(cr,w,h)
---            gears.shape.rounded_rect(cr,w,h,6)
---        end
---    end
---end)
---
---client.connect_signal("property::maximized", function (c)
---    c.shape = gears.shape.rectangle
---end)
-
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
         urgency = "critical",
@@ -69,16 +41,10 @@ naughty.connect_signal("request::display_error", function(message, startup)
 end)
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "mytheme.lua")
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
+
 modkey = "Mod4"
 -- }}}
 
@@ -330,40 +296,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
     mylayoutcontainer2 = wibox.container.margin (container4, 0, 0, 1.5, 1.5)
     clockcontainer = wibox.container.margin (container5, 1.5, 0, 1.5, 1.5)
     myvolumecontainer1 = wibox.container.margin (container2, 0, 0, 1.5, 1.5)
-    myspeedcontainer = wibox.container.margin (container, 0, 0, 1.5, 1.5)
+    myspeedcontainer = wibox.container.margin (container, 1.5, 0, 1.5, 1.5)
     netcontainer = wibox.container.margin (container1, 1.5, 0, 1.5, 1.5)
 
     --#246326 #159947
 
     -- Create the wibox
-
-    --s.mywibox = awful.wibar {
-    --    position = "bottom",
-    --    screen   = s,
-    --    height = 35,
-    --    margins = {
-    --        bottom = 10,
-    --        left = 20,
-    --        right = 20
-    --    },
-    --    widget   = {
-    --        layout = wibox.layout.align.horizontal,
-    --        { -- Left widgets
-    --            layout = wibox.layout.fixed.horizontal,
-    --            mylauncher,
-    --            s.mytaglist,
-    --            s.mypromptbox,
-    --        },
-    --        s.mytasklist, -- Middle widget
-    --        { -- Right widgets
-    --            layout = wibox.layout.fixed.horizontal,
-    --            mykeyboardlayout,
-    --            wibox.widget.systray(),
-    --            mytextclock,
-    --            s.mylayoutbox,
-    --        },
-    --    }
-    --}
 
     s.mywibox0 = awful.wibar {
         position = "top",
@@ -372,7 +310,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 40,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 1.5,
+        border_width = 1,
         height = 30,
         margins = {
             top = 12,
@@ -400,7 +338,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 244,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 1.5,
+        border_width = 1,
         height = 30,
         margins = {
             top = -18,
@@ -426,12 +364,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch  = false,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 1.5,
-        width    = 150,
+        border_width = 1,
+        width    = 120,
         height = 30,
         margins = {
             top = -48,
-            left = -568,
+            left = -598,
         },
         align    = "center",
         widget   = {
@@ -447,7 +385,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 116,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 1.5,
+        border_width = 1,
         height = 30,
         margins = {
             top = -78,
@@ -477,7 +415,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 192,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 2,
+        border_width = 1,
         height = 30,
         margins = {
             top = -108,
@@ -509,7 +447,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         width    = 100,
         bg = "#061A23",
         border_color = colors.color3,
-        border_width = 2,
+        border_width = 1,
         height = 30,
         margins = {
             top = -138,
