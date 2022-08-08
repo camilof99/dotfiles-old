@@ -533,7 +533,10 @@ awful.keyboard.append_global_keybindings({
 
             awful.key({ modkey }, "d", function()
                 awful.spawn(apps.default.app_launcher)
-            end, { description = "open code", group = "launcher" }),
+            end, { description = "open rofi", group = "launcher" }),
+            awful.key({ modkey, "Control" }, "p", function()
+                awful.spawn.with_shell(apps.default.picom_kill)
+            end, { description = "status picom", group = "launcher" }),
 })
 
 -- Tags related keybindings

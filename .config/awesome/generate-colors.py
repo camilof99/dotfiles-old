@@ -4,7 +4,9 @@ with open('/home/kaneki99/.cache/wal/colors.json') as archivo:
     data = json.load(archivo)
 
 arch = open("colors.lua", "w")
-arch.write('local awesome = awesome\nlocal round = require("gears.math").round\n'+'local gears_debug = require("gears.debug")\nlocal xresources = {}\n'+"local fallback = {\n")
+arch.write('local awesome = awesome\nlocal round = require("gears.math").round\n'
+    +'local gears_debug = require("gears.debug")\nlocal xresources = {}\n'
+    +"local fallback = {\n")
 
 for x in range(len(data['colors'])):
     value =  "color" + '{}'.format(x)
